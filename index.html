@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adeyeye Joseph — Software Developer</title>
+  <meta name="description" content="Adeyeye Joseph | Software Developer Portfolio" />
+
+  <style>
+    :root {
+      --bg: #0f111a;
+      --surface: #1a1c2c;
+      --border: #2c2f3e;
+      --text: #e0e0e0;
+      --muted: #a0a0a0;
+      --accent: #4f8ef7;
+      --radius: 12px;
+      --maxw: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+
+    .identity { display: flex; flex-direction: column; }
+    .identity strong { font-size: 20px; }
+    .identity span { font-size: 14px; color: var(--muted); }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 64px 0;
+    }
+
+    .hero-content {
+      flex: 1 1 500px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #3a6fd1;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      max-width: 500px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Section Base */
+    section {
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .see-more-container {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .see-more-container .btn-secondary {
+      display: inline-block;
+    }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .project h3 { font-size: 18px; }
+    .project p { color: var(--muted); font-size: 14px; }
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .tech span {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #2c2f3e;
+      color: #cbd5e1;
+    }
+
+    /* About */
+    .about {
+      max-width: 720px;
+    }
+
+    .skills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .skills span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Contact */
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  max-width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-box p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Button alignment */
+.contact-box .btn-primary {
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+  .contact-box {
+    text-align: center;
+  }
+
+  .contact-box .btn-primary {
+    align-self: center;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav { display: none; }
+
+      .hero {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 32px 0;
+      }
+
+      .hero h1 { font-size: 34px; }
+      .container { padding: 20px 16px; }
+      section { padding: 32px 0; }
+      .section-header { margin-bottom: 24px; }
+    }
+
+    @media (max-width: 500px) {
+      body { line-height: 1.4; }
+
+      .hero {
+        gap: 12px;
+        padding: 16px 0;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+
+      .hero p {
+        font-size: 15px;
+        margin-bottom: 16px;
+        line-height: 1.4;
+      }
+
+      .btn-primary, .btn-secondary {
+        padding: 10px 16px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .container { padding: 12px 12px; }
+      section {
+        padding: 16px 0;
+        border-top: none;
+      }
+      .section-header {
+        margin-bottom: 16px;
+      }
+      .section-header h2 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+      .project {
+        padding: 14px;
+        gap: 8px;
+      }
+      .see-more-container {
+        margin-top: 24px;
+        padding-top: 16px;
+      }
+      .contact-box { padding: 16px; }
+      footer { padding: 16px 0; }
+    }
+    @media (max-width: 900px) {
+  nav { display: none; }
+
+  .hero {
+    flex-direction: column-reverse; /* Image will be on top, text on bottom */
+    gap: 20px;
+    padding: 32px 0;
+  }
+
+  /* ADD THESE TWO RULES BELOW */
+  .hero-content {
+    flex: none; /* Let the text dictate the height */
+  }
+
+  .hero-image {
+    flex: none; /* Let the image dictate the height */
+    width: 100%;
+    max-width: 400px; /* Optional: keeps the profile pic from getting too huge */
+  }
+
+  .hero h1 { font-size: 34px; }
+  .container { padding: 20px 16px; }
+  section { padding: 32px 0; }
+  .section-header { margin-bottom: 24px; }
+}
+@media (max-width: 900px) {
+  /* ... keep your other mobile styles ... */
+
+  .hero-image {
+    flex: none;
+    width: 180px;      /* Set a fixed professional size */
+    height: 180px;     /* Keep it square for the circle effect */
+    margin: 0 auto;    /* Centers the image container */
+    border-radius: 50%; /* Makes it a circle */
+    border: 3px solid var(--accent); /* Optional: adds a nice pop of color */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Adds depth */
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="identity">
+        <strong>Adeyeye Adebola Joseph</strong>
+        <span>Software Developer</span>
+      </div>
+
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Designing and building modern web products.</h1>
+        <p>
+          I am a Software Developer and Computer Education student at the University of Nigeria, dedicated to bridging the gap between complex backend logic and seamless user experiences. With a background in both freelance development and industry internships, I build scalable web applications that prioritize performance, clean architecture, and long-term maintainability.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://github.com/adebolajoseph" target="_blank">GitHub</a>
+          <a class="btn-secondary" href="#projects">View Projects</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/unnamed.jpg" alt="Profile photo">
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p>Selected real-world work</p>
+      </div>
+
+      <div class="projects">
+        <div class="project">
+          <h3>De-Brilliant Academy Learning Platform</h3>
+          <p>
+            Multi-module digital learning platform with quizzes, homework submission,
+            parent communication portal, and secure access control.
+          </p>
+          <div class="tech">
+            <span>JavaScript</span><span>REST APIs</span><span>Google Sheets API</span>
+          </div>
+          <a class="btn-primary" href="https://de-brilliant-acadademy.vercel.app/" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>Solana Perpetual DEX Frontend</h3>
+          <p>
+            Production-ready decentralized exchange frontend with TradingView
+            integration and high-performance UI.
+          </p>
+          <div class="tech">
+            <span>React</span><span>Web3</span><span>TradingView</span>
+          </div>
+          <a class="btn-primary" href="https://kinetic-mocha.vercel.app/" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>$YOUSHAN Memecoin Website</h3>
+          <p>
+            Fully responsive React website with tokenomics, community links,
+            and production deployment.
+          </p>
+          <div class="tech">
+            <span>React</span><span>CSS</span><span>Deployment</span>
+          </div>
+          <a class="btn-primary" href="https://www.youshan.world/" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>FOTA Ajah Church Website</h3>
+          <p>
+            Church website featuring event schedules, service information,
+            and live streaming support.
+          </p>
+          <div class="tech">
+            <span>React</span><span>Responsive Design</span>
+          </div>
+          <a class="btn-primary" href="https://www.fotaajah.com/" target="_blank">Live Project</a>
+        </div>
+      </div>
+
+      <div class="see-more-container">
+        <a class="btn-secondary" href="projects.html">
+          See More Projects
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <h2>About</h2>
+        <p>Background & skill set</p>
+      </div>
+
+      <div class="about">
+        <p>
+          I am a Computer Education student at the University of Nigeria with
+          hands-on industry experience through internships and freelance work.
+          I enjoy building dependable software and continuously improving my craft.
+        </p>
+
+        <div class="skills">
+          <span>JavaScript</span>
+          <span>TypeScript</span>
+          <span>React</span>
+          <span>Node.js</span>
+          <span>REST APIs</span>
+          <span>Tailwind CSS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>Let’s work together</p>
+      </div>
+
+      <div class="contact-box">
+        <p>Email: <strong>adeyeyejoseph122@gmail.com</strong></p>
+        <p>
+          GitHub:
+          <a href="https://github.com/adebolajoseph" target="_blank">
+            github.com/adebolajoseph
+          </a>
+        </p>
+        <a class="btn-primary" href="mailto:adeyeyejoseph122@gmail.com">Email me</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Adeyeye Joseph
+    </footer>
+
+  </div>
+</body>
+</html>

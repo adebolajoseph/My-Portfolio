@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Adeyeye Joseph</title>
+  <meta name="description" content="Adeyeye Joseph | Software Developer Projects" />
+
+  <style>
+    :root {
+      --bg: #0f111a;
+      --surface: #1a1c2c;
+      --border: #2c2f3e;
+      --text: #e0e0e0;
+      --muted: #a0a0a0;
+      --accent: #4f8ef7;
+      --radius: 12px;
+      --maxw: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+
+    .identity { display: flex; flex-direction: column; }
+    .identity strong { font-size: 20px; }
+    .identity span { font-size: 14px; color: var(--muted); }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--accent); }
+
+    /* Section Base */
+    section {
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .project h3 { font-size: 18px; }
+    .project p { color: var(--muted); font-size: 14px; }
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .tech span {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #2c2f3e;
+      color: #cbd5e1;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .back-home .btn-secondary {
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #3a6fd1;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav { display: none; }
+
+      .hero h1 { font-size: 34px; }
+      .container { padding: 20px 16px; }
+      section { padding: 32px 0; }
+      .section-header { margin-bottom: 24px; }
+    }
+
+    @media (max-width: 500px) {
+      body { line-height: 1.4; }
+
+      .container { padding: 12px 12px; }
+      section {
+        padding: 16px 0;
+        border-top: none;
+      }
+      .section-header {
+        margin-bottom: 16px;
+      }
+      .section-header h2 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+      .project {
+        padding: 14px;
+        gap: 8px;
+      }
+      .back-home {
+        margin-top: 24px;
+        padding-top: 16px;
+      }
+      .btn-primary, .btn-secondary {
+        padding: 10px 16px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+      }
+      footer { padding: 16px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="identity">
+        <strong>Adeyeye Adebola Joseph</strong>
+        <span>Software Developer</span>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <h2>All Projects</h2>
+        <p>Complete collection of my work</p>
+      </div>
+
+      <div class="projects">
+        <!-- Featured Projects from Homepage -->
+        <div class="project">
+          <h3>De-Brilliant Academy Learning Platform</h3>
+          <p>
+            Multi-module digital learning platform with quizzes, homework submission,
+            parent communication portal, and secure access control.
+          </p>
+          <div class="tech">
+            <span>JavaScript</span><span>REST APIs</span><span>Google Sheets API</span>
+          </div>
+          <a class="btn-primary" href="https://de-brilliant-acadademy.vercel.app/" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>Solana Perpetual DEX Frontend</h3>
+          <p>
+            Production-ready decentralized exchange frontend with TradingView
+            integration and high-performance UI.
+          </p>
+          <div class="tech">
+            <span>React</span><span>Web3</span><span>TradingView</span>
+          </div>
+          <a class="btn-primary" href="https://kinetic-mocha.vercel.app/" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>$YOUSHAN Memecoin Website</h3>
+          <p>
+            Fully responsive React website with tokenomics, community links,
+            and production deployment.
+          </p>
+          <div class="tech">
+            <span>React</span><span>CSS</span><span>Deployment</span>
+          </div>
+          <a class="btn-primary" href="https://www.youshan.world/" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>FOTA Ajah Church Website</h3>
+          <p>
+            Church website featuring event schedules, service information,
+            and live streaming support.
+          </p>
+          <div class="tech">
+            <span>React</span><span>Responsive Design</span>
+          </div>
+          <a class="btn-primary" href="https://www.fotaajah.com/" target="_blank">Live Project</a>
+        </div>
+
+        <!-- Additional Projects -->
+        <div class="project">
+          <h3>Automedsys Clone Website</h3>
+          <p>
+            <p>
+  Responsive SaaS landing page clone inspired by AutoMedSys, built to showcase
+  modern UI design, component architecture, and multilingual support using React.
+</p>
+
+          </p>
+          <div class="tech">
+            <span>React</span><span>Node.js</span><span>MongoDB</span><span>Chart.js</span>
+          </div>
+          <a class="btn-primary" href="https://automedsys-clone.vercel.app/en" target="_blank">Live Project</a>
+        </div>
+
+        <div class="project">
+          <h3>IreKits Media</h3>
+          <p>
+          Responsive media services website built with React and styled components.
+         Features a modern layout, smooth navigation, and mobile-first design.
+         Deployed on Vercel.
+          </p>
+          <div class="tech">
+            <span>JavaScript</span><span>OpenWeather API</span><span>CSS</span><span>Geolocation</span>
+          </div>
+          <a class="btn-primary" href="https://irekitsmedia.vercel.app/" target="_blank">Live Project</a>
+        </div>
+
+
+
+        <div class="project">
+          <h3>Portfolio Website (This Site)</h3>
+          <p>
+            Responsive portfolio website built with modern web technologies,
+            featuring dark theme and smooth animations.
+          </p>
+          <div class="tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+          </div>
+          <a class="btn-primary" href="index.html">View Live</a>
+        </div>
+
+       
+
+      <div class="back-home">
+        <a class="btn-secondary" href="index.html">
+          ← Back to Home
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Adeyeye Joseph
+    </footer>
+
+  </div>
+</body>
+</html>
