@@ -6,9 +6,9 @@ This is my professional portfolio website, showcasing my work as a Software Deve
 [View Live Site](https://adebolajoseph.github.io/My-Portfolio/)
 
 ## 🛠️ Tech Stack
-* **Frontend:** HTML5, CSS3 (Flexbox & CSS Grid)
+* **Frontend:** React, Tailwind CSS, Bootstrap CSS,HTML5, CSS3 (Flexbox & CSS Grid)
 * **Architecture:** Mobile-First Responsive Design
-* **Hosting:** GitHub Pages
+* **Hosting:** GitHub Pages, Vercel, Netlify
 
 ## 📂 Project Highlights
 * **De-Brilliant Academy:** A digital learning platform with secure access control.
